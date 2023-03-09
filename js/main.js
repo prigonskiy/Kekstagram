@@ -73,8 +73,8 @@ const createCommentary = (commentaryId) => ({
 
 // Создание объекта с описанием фотографии
 const createPhotoDescription = (photoId, commentaryId) => ({
-  id: photoId,
-  url: `photos/${photoId}.jpg`,
+  id: photoId + 1,
+  url: `photos/${photoId + 1}.jpg`,
   description: getRandomArrayElement(MOCKS.descriptions),
   likes: getRandomInteger(MOCKS.likes.min, MOCKS.likes.max),
   comments: createCommentary(commentaryId),
