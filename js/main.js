@@ -1,3 +1,1 @@
-import { createArrayOfPhotoDescriptions } from './data.js';
-
-createArrayOfPhotoDescriptions();
+import './show-thumbnails.js';

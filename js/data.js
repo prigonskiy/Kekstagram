@@ -9,13 +9,22 @@ const createCommentary = (commentaryId) => ({
   name: getRandomArrayElement(MOCKS.names),
 });
 
+const createArrayOfCommentaries = (commentaryId) => {
+  const commentaries = [];
+  const numberOfCommentaries = getRandomInteger(1, 10);
+  for (let currentCommentary = 0; currentCommentary < numberOfCommentaries; currentCommentary++) {
+    commentaries[currentCommentary] = createCommentary(commentaryId);
+  }
+  return commentaries;
+};
+
 // Создание объекта с описанием фотографии
 const createPhotoDescription = (photoId, commentaryId) => ({
   id: photoId + 1,
   url: `photos/${photoId + 1}.jpg`,
   description: getRandomArrayElement(MOCKS.descriptions),
   likes: getRandomInteger(MOCKS.likes.min, MOCKS.likes.max),
-  comments: createCommentary(commentaryId),
+  comments: createArrayOfCommentaries(commentaryId),
 });
 
 // Создание массива из объектов с описаниями фотографий
